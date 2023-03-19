@@ -1,10 +1,9 @@
-import "./App.css";
-import Node from "./components/Node/Node";
+import NodeContainer from "./pages/NodeContainer/NodeContainer";
 
 function App() {
   return (
-    <div className="App">
-      <Node />
+    <div style={{ padding: 0 }}>
+      <NodeContainer />
     </div>
   );
 }
