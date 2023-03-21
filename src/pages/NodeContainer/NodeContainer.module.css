@@ -1,0 +1,58 @@
+.node_container {
+  margin: 0;
+}
+
+.add_node_btn {
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  width: 3rem;
+  border: none;
+}
+
+.add_node_btn img {
+  width: 100%;
+}
+
+.action_btn_container {
+  background-color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.delete_node_btn {
+  width: 3rem;
+  height: 3rem;
+  /* position: absolute;
+  top: 1rem;
+  right: 1rem; */
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.delete_node_btn img {
+  width: 100%;
+}
+
+.info_modal_button {
+  width: 3rem;
+  height: 3rem;
+  /* position: absolute;
+  top: 1rem;
+  right: 5rem; */
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.info_modal_button img {
+  width: 100%;
+}

@@ -1,0 +1,55 @@
+.info_modal_background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.info_modal_container {
+  z-index: inherit;
+  width: 34rem;
+  height: 20rem;
+  background-color: white;
+  color: grey;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  border-radius: 2rem;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  overflow-y: scroll;
+}
+
+.close_modal_btn {
+  border: none;
+  width: 2.4rem;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.close_modal_btn img {
+  width: 100%;
+}
+
+.copy_graph_btn {
+  border: none;
+  background-color: #0891b2;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
