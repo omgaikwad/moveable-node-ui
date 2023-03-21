@@ -48,3 +48,33 @@
   font-size: 12px;
   padding: 0 0 0 4px;
 }
+
+.connecting_circle_forward {
+  border: 2px solid white;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, 0);
+  border-radius: 50%;
+  background-color: #1e1f22;
+  cursor: crosshair;
+}
+
+.connecting_circle_backward {
+  border: 2px solid white;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  background-color: #1e1f22;
+  cursor: crosshair;
+}
+
+.path_line {
+  position: absolute;
+}
