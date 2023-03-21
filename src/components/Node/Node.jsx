@@ -45,7 +45,7 @@ const Node = (props) => {
         position: "absolute",
         top: y,
         left: x,
-        border: isActiveNode() ? "1px solid white" : "2px solid #0891b2",
+        border: isActiveNode() ? "3px solid white" : "2px solid #0891b2",
       }}
       onMouseDown={handleMouseDown}
       onClick={() => handleActiveNode(id)}

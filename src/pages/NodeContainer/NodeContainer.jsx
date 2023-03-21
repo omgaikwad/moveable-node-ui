@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./NodeContainer.module.css";
 import Node from "../../components/Node/Node";
 import { generateUniqueId } from "../../utils/general-utils";
+import InfoModal from "../../components/InfoModal/InfoModal";
+import SaveGraph from "../../components/SaveGraph/SaveGraph";
 
 const NodeContainer = () => {
   const [nodes, setNodes] = useState([
@@ -15,9 +17,19 @@ const NodeContainer = () => {
   ]);
   const [activeNode, setActiveNode] = useState(null);
   const [activeFlowNode, setActiveFlowNode] = useState(null);
+  const [showInfoModal, setShowInfoModal] = useState(false);
+  const [showSaveGraphModal, setShowSaveGraphModal] = useState(false);
 
   const handleActiveNode = (id) => {
     setActiveNode(id);
+  };
+
+  const closeInfoModal = () => {
+    setShowInfoModal(false);
+  };
+
+  const closeSaveGraphModal = () => {
+    setShowSaveGraphModal(false);
   };
 
   const handleActiveFlowNode = (id) => {
@@ -66,8 +78,8 @@ const NodeContainer = () => {
     });
   };
 
-  const handleDeleteNode = (id) => {
-    setNodes((prevNodes) => prevNodes.filter((node) => node.id !== id));
+  const handleDeleteNode = () => {
+    setNodes((prevNodes) => prevNodes.filter((node) => node.id !== activeNode));
   };
 
   const getNode = (id) => {
@@ -87,7 +99,6 @@ const NodeContainer = () => {
 
   return (
     <div className={styles["node_container"]}>
-      {/* <div className={styles["svg_path_container"]}> */}
       <svg className={styles["path_line"]} width="100vw" height="100vh">
         {flowNodesArray.map((node) => {
           const flowNode = getNode(node.flowNodeId);
@@ -107,7 +118,12 @@ const NodeContainer = () => {
           );
         })}
       </svg>
-      {/* </div> */}
+
+      {showInfoModal && <InfoModal closeInfoModal={closeInfoModal} />}
+
+      {showSaveGraphModal && (
+        <SaveGraph closeSaveGraphModal={closeSaveGraphModal} nodes={nodes} />
+      )}
       {nodes.map((node) => {
         return (
           <Node
@@ -123,18 +139,34 @@ const NodeContainer = () => {
         );
       })}
 
-      <button className={styles["add_node_btn"]} onClick={handleAddNode}>
-        Add Node
-      </button>
-
-      {activeNode !== null && (
-        <button
-          className={styles["delete_node_btn"]}
-          onClick={() => handleDeleteNode(activeNode)}
-        >
-          <img src="/assets/icons/delete.png" alt="delete-icon" />
+      <div className={styles["action_btn_container"]}>
+        <button className={styles["add_node_btn"]} onClick={handleAddNode}>
+          <img src="/assets/icons/add.png" alt="add-icon" />
         </button>
-      )}
+
+        <button
+          className={styles["add_node_btn"]}
+          onClick={() => setShowSaveGraphModal(true)}
+        >
+          <img src="/assets/icons/download.png" alt="download-icon" />
+        </button>
+
+        <button
+          onClick={() => setShowInfoModal(true)}
+          className={styles["info_modal_button"]}
+        >
+          <img src="/assets/icons/info.png" alt="info-icon" />
+        </button>
+
+        {activeNode !== null && !isBackwardFlowConnected(activeNode) && (
+          <button
+            className={styles["delete_node_btn"]}
+            onClick={() => handleDeleteNode()}
+          >
+            <img src="/assets/icons/delete.png" alt="delete-icon" />
+          </button>
+        )}
+      </div>
     </div>
   );
 };
