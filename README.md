@@ -8,7 +8,6 @@ Node Flow is Node based Interface where user can create nodes
 
 ## Demo
 
-Insert gif or link to demo
 ![](./public/assets/nodeFlow.png)
 
 ## Tech Stack
