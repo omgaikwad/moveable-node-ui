@@ -5,37 +5,39 @@ const InfoModal = ({ closeInfoModal }) => {
   return (
     <div className={styles["info_modal_background"]}>
       <div className={styles["info_modal_container"]}>
-        <button
-          onClick={() => closeInfoModal()}
-          className={styles["close_modal_btn"]}
-        >
-          <img src="/assets/icons/cancel.png" alt="cancel-icon" />
-        </button>
+        <h1 className={styles["heading"]}>Help</h1>
+
         <div
           style={{
             display: "flex",
             flexDirection: "column",
           }}
+          className={styles["info_container"]}
         >
           <p>
-            1. New Nodes can be created clicking `+` icon present on the top
-            right corner of the screen
+            New Nodes can be created clicking `+` icon present on the top right
+            corner of the screen.
+          </p>
+          <p>Nodes can be dragged and dropped to any position on the screen.</p>
+          <p>
+            Nodes can be deleted by selecting the node and clicking `Delete`
+            icon.
           </p>
           <p>
-            2. Nodes can be dragged and dropped to any position on the screen
-          </p>
-          <p>
-            3. Nodes can be deleted by selecting the node and clicking `Delete`
-            icon
-          </p>
-          <p>
-            4. Nodes can be connected by selecting first node using on click on
+            Nodes can be connected by selecting first node using on click on
             forward circle and then selecting second node using on click on
-            backward circle
+            backward circle.
           </p>
-          <p>5. Text can be added to the node using text input box</p>
-          <p>6. Node Graph can be downloaded and saved using `Download` icon</p>
+          <p> Text can be added to the node using text input box.</p>
+          <p> Node Graph can be downloaded and saved using `Download` icon.</p>
         </div>
+
+        <button
+          onClick={() => closeInfoModal()}
+          className={styles["close_modal_btn"]}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

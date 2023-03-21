@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
@@ -30,17 +30,19 @@
 }
 
 .close_modal_btn {
-  border: none;
-  width: 2.4rem;
-  background-color: transparent;
+  padding: 4px 8px;
+  border: 1px solid #0891b2;
+  border-radius: 4px;
   cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  color: #0891b2;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  background-color: transparent;
 }
 
-.close_modal_btn img {
-  width: 100%;
+.close_modal_btn:hover {
+  color: #0d6b7a;
+  border: 1px solid #0d6b7a;
 }
 
 .copy_graph_btn {
@@ -52,4 +54,29 @@
   padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: auto;
+}
+
+.copy_graph_btn:hover {
+  background-color: #0d6b7a;
+}
+
+.json_container {
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.heading {
+  margin: 0;
+}
+
+.action_btn_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
