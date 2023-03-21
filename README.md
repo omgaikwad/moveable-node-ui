@@ -1,6 +1,6 @@
 # Node Flow
 
-Node Flow is Node based Interface where user can create nodes
+Node Flow is Node based Interface where user can create nodes and make connection between them.
 
 ## Live Project Link
 
